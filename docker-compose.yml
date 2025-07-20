@@ -8,14 +8,14 @@ services :
     - POSTGRES_DB=pleum 
     - POSTGRES_USER=pleum
     - POSTGRES_PASSWORD=pleum
-  web:
+  app:
     image: prawee/strapi:latest
     container_name: my_app_compose
     ports:
     - "8080:1337"
     environment:
-     - DATABASE_HOST=192.168.1.143
-     - DATABASE_PORT=55432
-     - DATABASE_NAME=pleum 
-     - DATABASE_USERNAME=pleum 
-     - DATABASE_PASSWORD=pleum 
+        DATABASE_HOST: 192.168.1.143
+        DATABASE_PORT: 55432
+        DATABASE_NAME: pleum 
+        DATABASE_USERNAME: pleum 
+        DATABASE_PASSWORD: pleum 
