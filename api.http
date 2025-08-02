@@ -1,24 +1,24 @@
-Test API
+#Test API
 @username={{$env USER_USERNAME}}
 @password={{$env USER_PASSWORD}}
 @email={{$env USER_EMAIL}}
 @usertoken={{$env USER_TOKEN}}
 
-Register account
+#Register account
 POST http://localhost:8080/api/auth/local/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "{{username}}",
-    "email": "{{email}}",
-    "password": "{{password}}"
+    "username": "test",
+    "email": "test@example.com",
+    "password": "test"
 }
 
-Get all users
+#Get all users
 GET http://localhost:8080/api/users HTTP/1.1
 Content-Type: application/json
 
-Authetication/Login
+#Authetication/Login
 POST http://localhost:8080/api/auth/local HTTP/1.1
 Content-Type: application/json
 
@@ -27,16 +27,16 @@ Content-Type: application/json
     "password": "{{password}}"
 }
 
-GET Profile
+#GET Profile
 GET http://localhost:8080/api/users/me HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer {{usertoken}}
 
-Update Profile
+#Update Profile
 PUT http://localhost:8080/api/users/1 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer {{usertoken}}
 
 {
-    "username": "{{username}}_update",
+    "username": "{{username}}_update"
 }
